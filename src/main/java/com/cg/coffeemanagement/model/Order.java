@@ -36,6 +36,6 @@ public class Order {
     private BigDecimal subAmount;
 
     @ManyToOne
-    @JoinColumn(name = "id_tables")
-    private Table table ;
+    @JoinColumn(name = "id_table")
+    private CoffeeTable table ;
 }
