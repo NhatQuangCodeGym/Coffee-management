@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.apache.catalina.User;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.Table;
 
@@ -38,4 +39,13 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "id_table")
     private CoffeeTable table ;
+
+    @OneToOne
+    @JoinColumn(name = "discount_id")
+    private Discount discount;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
 }
